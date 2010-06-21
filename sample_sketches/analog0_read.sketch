@@ -1,0 +1,19 @@
+int potpin       = 0;  
+int val_analog_0 = 0;   
+int val_old      = 0;; 
+ 
+void setup() 
+{ 
+  Serial.begin(9600);  
+} 
+ 
+void loop() 
+{ 
+  	val_analog_0 = analogRead(potpin);            // reads the value of the potentiometer (value between 0 and 1023) 
+	if( val_analog_0 != val_old) {
+  		Serial.print(val_analog_0);
+  		Serial.print(" hxi\n");
+	}
+	val_old =  val_analog_0;
+  	delay(1500);                           // waits for the servo to get there 
+} 
